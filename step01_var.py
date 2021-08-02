@@ -37,7 +37,7 @@ if 'a' in listdata: print('a가 listdata에 있습니다')
 
 # for 반복문 개념
 # for문의 범위로 사용되는 것은 "시퀀스(sequence) 자료형" 또는 "반복 가능한 자료형" 이어야 함
-# sequence 자료형: 리시트, 튜플, range, 문자열처럼 값이 연속적으로 이어지는 자료형
+# sequence 자료형: 리스트, 튜플, range, 문자열처럼 값이 연속적으로 이어지는 자료형
 """
 - 문자열
 - 리스트, 튜플
