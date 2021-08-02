@@ -90,3 +90,13 @@ else:
 
 # None 개념
 # None: Types.NoneType의 유일한 값. 값이 존재하지 않는 변수에 대입하여 이 변수에 아무런 값이 없다는 것을 나타내기 위해 주로 활용
+val = None
+condition = 1
+print(val)
+if condition == 1:
+    val = [1, 2, 3]
+    print(val)
+
+else:
+    val= 'I love Python'
+    print(val)
