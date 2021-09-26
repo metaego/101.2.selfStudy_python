@@ -59,17 +59,30 @@
 # print(i)
 # print("{}를 더할 때 {}을 넘으며 그때의 값은 {}입니다".format(i, limit, sum_value))
 
-# 1부터 100까지 숫자 중 100의 보수를 곱했을 때 
-# 최대값이 되는 경우는 어떤 숫자를 곱했을 때인가?
-max_value = 0
-a = 0
-b = 0
+
+
+# # 1부터 100까지 숫자 중 100의 보수를 곱했을 때 
+# # 최대값이 되는 경우는 어떤 숫자를 곱했을 때인가?
+# max_value = 0
+# a = 0
+# b = 0
+
+# for i in range(1, 101):
+#     j = 100 - i
+#     if (i * j) > max_value:
+#         max_value = i*j
+#         a = i
+#         b = j
+
+# print("최대가 되는 경우: {} * {} = {}".format(a, b, max_value))
+
+# p.206-207
+# 1 ~ 100 사이에 있는 숫자 중 2진수로 변환했을 때 0이 하나만 포함된 숫자를 찾고,
+# 그 숫자들의 합을 구하는 코드를 만들어라
+# output = [i for i in range(1, 101) if ("{:b}".format(i)).count("0") == 1]
 
 for i in range(1, 101):
-    j = 100 - i
-    if (i * j) > max_value:
-        max_value = i*j
-        a = i
-        b = j
+    print("{} : {}".format(i, "{:b}".format(i)))
+    print(type("{:b}".format(i)))
+# print("합계:", sum(output))
 
-print("최대가 되는 경우: {} * {} = {}".format(a, b, max_value))
