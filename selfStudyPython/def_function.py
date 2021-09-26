@@ -1,15 +1,75 @@
-# 매개변수로 전달된 값들을 모두 곱해서 리턴하는 가변 매개변수 함수 정의하라
-def mul(*values):
-    total_value = 1
-    for i in values:
-        total_value *= i
+# 2021.09.26 - p.227 마무리2
+# # 매개변수로 전달된 값들을 모두 곱해서 리턴하는 가변 매개변수 함수 정의하라
+# def mul(*values):
+#     total_value = 1
+#     for i in values:
+#         total_value *= i
     
-    return total_value
+#     return total_value
+
+# # recall function
+# # 불러온 값이 맞는지 확인 비교
+# print(mul(5, 7, 9, 10))
+# print(5*7*9*10)
+
+#######################################################################################################
+# 2021.09.27
+# p.243 05-2 함수의 활용_마무리1
+# 재귀함수를 만들어서 리스트를 평탄화하는 함수를 만들어보라. 
+# 리스트 평탄화는 중첩된 리스트가 있을때 중첩을 모두 제거하고 풀어서 1차원 리스트로 만드는 것을 의미함
+
+# def flatten(data):
+#     output = []
+#     for item in data:
+#         if type(item) is list:
+#             output += flatten(item)
+#         else:
+#             output += [item]
+#     return output
+
+# example = [[1, 2, 3], [4, [5, 6]], 7, [8, 9]]
+# print("원본:", example)
+# print("변환:", flatten(example))
 
 
 
+#######################################################################################################
+# p.244-245 05-2 함수의 활용_마무리2
+# https://www.youtube.com/watch?v=594WmZdC_ts&list=PLBXuLgInP-5n-KjzrCVs4dH3cW716J3tp&index=3
+# 패밀리 레스토랑에서 여러 개의 테이블에 나누어 앉으려고 한다
+# 이때 한 사람만 앉는 테이블이 없게 그룹을 지어야 한다
+# 인원 수를 나누는 패턴만 구하면 되며, 누가 어디에 앉는지 등은 고려하지 않아도 괜찮다
+# 예를 들어 6명이라면 다음과 같은 네가지 경우를 생각할 수 있다
+# 2명+2명+2명, 2명+4명, 3명+3명, 6명
 
-# recall function
-# 불러온 값이 맞는지 확인 비교
-print(mul(5, 7, 9, 10))
-print(5*7*9*10)
+# 한 개의 테이블에 앉을 수 있는 최대 사람의 수는 10명이다
+# 100명의 사람이 하나 이상의테이블에 나누어 앉는 패턴을 구하세요
+
+# 앉힐수있는최소사람수 = 2
+# 앉힐수있는최대사람수 = 10
+# 전체사람의수 = 100
+# memo= {}
+
+# def 문제(남은사람수, 앉힌사람수):
+#     key = str([남은사람수, 앉힌사람수])
+
+#     # 종료조건
+#     if key in memo:
+#         return memo[key]
+#     if 남은사람수 < 0:
+#         return 0
+#     if 남은사람수 == 0:
+#         return 1
+
+#     # 재귀조건
+#     count = 0
+#     for i in range(앉힌사람수, 앉힐수있는최대사람수 +1):
+#         count += 문제(남은사람수 - i, i)
+
+#     # 메모화 처리
+#     memo[key] = count
+
+#     #종료
+#     return count
+
+# print(문제(전체사람의수, 앉힐수있는최소사람수))
