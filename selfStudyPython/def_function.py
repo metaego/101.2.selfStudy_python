@@ -73,3 +73,81 @@
 #     return count
 
 # print(문제(전체사람의수, 앉힐수있는최소사람수))
+
+# 튜플은 딕셔너리의 키로 사용 가능
+# dic = {
+#     (0, 0): 10
+# }
+# print(dic[(0,0)])
+# print(dic[0,0])  # 튜플은 괄호가 생략되기 때문이 해당과 같은 타입도 가능
+
+
+#######################################################################################################
+# 현대 프로그래밍 언어는 함수를 하나의 자료형으로 취급하기 때문에 함수를 매개변수로 전달할 수 있음.(2021.09.28)
+# 함수의 매개 변수로 함수 전달하기(p.252)
+
+# 매개변수로 받은 함수를 10번 호출하는 함수
+# def call_10_times(func):
+#     for i in range(10):
+#         # 콜백함수: 다른 함수에서 호출하는 함수
+#          func(i)
+
+# # 간단한 출력하는 함수
+# def print_hello(number):
+#     print("안녕하세요", number)
+
+# # 조합하기
+# # call_10_times(print_hello)
+
+# # 람다 정의
+# call_10_times(lambda number: print("안녕하세요", number))
+
+#######################################################################################################
+# filter 함수와 람다 함수 콜라보(2021.09.28)
+# 방법1
+# def 짝수만(number):
+#     return number % 2 == 0
+
+# a = list(range(100))
+# b = filter(짝수만, a)
+# print(list(b))
+
+
+# 방법2
+# a = list(range(100))
+# b = filter(lambda number: number % 2 == 0, a)
+# print(list(b))
+
+# # 방법3
+# 짝수만 = lambda number: number % 2 == 0
+
+# a = list(range(100))
+# b = filter(짝수만, a)
+# print(list(b))
+
+
+
+#######################################################################################################
+# map함수와 람다 함수 콜라보(2021.09.28)
+# 방법1
+# def 제곱(number):
+#     return number * number
+
+# a = list(range(100))
+# print(list(map(제곱, a))) # 기존의 리스트를 기반으로 새로운 리스트를 만들때 사용
+
+
+# # 방법2
+# a = list(range(100))
+# print(list(map(lambda number: number * number, a)))
+
+# # 방법3
+# a = list(range(100))
+# print(list(map(lambda number: number * number, a)))
+# print([i * i for i in a])
+# print([i * i for i in a if i % 2 == 0])
+
+# 리스트 내포를 사용하는 경우, 결과로 리스트가 나온다.
+# 그만큼의 리스트가 하나 더 복제되서 메모리를 차지한다는 의미이다.
+# map(), filter()함수 등은 제너레이터 함수라서 
+# 내부의 데이터가 실제로 메모리에 용량을 차지하지 않음(호출되기 전까지 가상의 값만 가지고 있음)
