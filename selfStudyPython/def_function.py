@@ -151,3 +151,31 @@
 # 그만큼의 리스트가 하나 더 복제되서 메모리를 차지한다는 의미이다.
 # map(), filter()함수 등은 제너레이터 함수라서 
 # 내부의 데이터가 실제로 메모리에 용량을 차지하지 않음(호출되기 전까지 가상의 값만 가지고 있음)
+
+#######################################################################################################
+# 텍스트 파일 처리 기본(2021.09.28)
+# 파일 읽고 쓰는 코드
+# 파일 새로 쓰기
+# file = open("test.txt", "w")
+# file.write("안녕하세요")
+# file.close()
+
+# 파일 이어 쓰기
+# file = open("test.txt", "a", encoding="utf8")
+# file.write("안녕하세요")
+# file.close()
+
+# 파일 읽기
+# file = open("test.txt", "r",encoding="utf8")
+# print(file.read())
+# file.close()
+
+# with()함수
+# with open("test.txt", "w", encoding="utf8") as file:
+#     file.write("안녕하세요")
+
+# with open("test.txt", "a", encoding="utf8") as file:
+#     file.write("안녕하세요")
+
+# with open("test.txt", "r", encoding="utf8") as file:
+#     file.read()
